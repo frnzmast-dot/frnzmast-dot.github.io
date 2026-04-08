@@ -719,33 +719,43 @@
 
   <script>
     /* Hamburger */
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('navbar-links').classList.toggle('open');
-    });
+    var ham = document.getElementById('hamburger');
+    var nav = document.getElementById('navbar-links');
+    if (ham) {
+      ham.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+    }
 
     /* Active nav on scroll */
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.navbar-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
-      navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.navbar-links a');
+    window.addEventListener('scroll', function() {
+      var current = '';
+      sections.forEach(function(s) {
+        if (window.scrollY >= s.offsetTop - 80) current = s.id;
+      });
+      navLinks.forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
     });
 
     /* Toggle articoli nascosti */
-    const btnArticoli = document.getElementById('btnArticoli');
-    const hiddenCards = document.querySelectorAll('.article-card.hidden');
-    let expanded = false;
-    btnArticoli.addEventListener('click', () => {
-      expanded = !expanded;
-      hiddenCards.forEach(card => {
-        card.style.display = expanded ? 'block' : 'none';
+    var btnArticoli = document.getElementById('btnArticoli');
+    var hiddenCards = document.querySelectorAll('.article-card.hidden');
+    var expanded = false;
+    if (btnArticoli) {
+      btnArticoli.addEventListener('click', function() {
+        expanded = !expanded;
+        hiddenCards.forEach(function(card) {
+          card.style.display = expanded ? 'block' : 'none';
+        });
+        btnArticoli.innerHTML = expanded
+          ? 'Mostra meno <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>'
+          : 'Scopri altro <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>';
       });
-      btnArticoli.innerHTML = expanded
-        ? 'Mostra meno <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>'
-        : 'Scopri altro <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>';
-      btnArticoli.classList.toggle('expanded', expanded);
-    });
+    }
   </script>
+
 </body>
 </html>
