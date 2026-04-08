@@ -775,14 +775,14 @@ Per questo, se vuoi conoscermi meglio, clicca qui:
 var btnTg = document.getElementById('btnTelegram');
 if (btnTg) {
   btnTg.addEventListener('click', function() {
-    var testo = `Ciao! Sono *Giuseppe Massafra* e sono candidato alle elezioni comunali di Capurso, a sostegno del candidato sindaco Michele Laricchia, nella lista _Evviva Capurso_.
+    var testo = `Ciao! Sono Giuseppe Massafra e sono candidato alle elezioni comunali di Capurso, a sostegno del candidato sindaco Michele Laricchia, nella lista Evviva Capurso.
 
 Il mio lavoro mi porta ogni giorno ad entrare a contatto con persone di tutte le età e con le esigenze reali della nostra comunità.
 
 Credo che il futuro del nostro paese debba essere costruito da chi ha voglia di lavorare con serietà e mettersi al servizio dei cittadini.
 
 Per questo, se vuoi conoscermi meglio, clicca qui:
-` + "\n\n" + window.location.href;
+` + window.location.href;
     window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(testo), '_blank');
   });
 }
