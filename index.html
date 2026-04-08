@@ -195,7 +195,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
-      .hamburger { display: flex; }
+      .er { display: flex; }
       .navbar-links { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--navy-dark); flex-direction: column; padding: 1rem; gap: 4px; }
       .navbar-links.open { display: flex; }
       .navbar-links a { font-size: 15px; padding: 10px 14px; }
@@ -218,7 +218,7 @@
   <nav class="navbar">
     <div class="navbar-inner">
       <a class="navbar-logo" href="#hero">Giuseppe Massafra · Capurso 2026</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="er" id="er" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="navbar-links" id="navbar-links">
@@ -717,7 +717,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     /* Hamburger */
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('navbar-links').classList.toggle('open');
@@ -742,4 +742,10 @@
         card.style.display = expanded ? 'block' : 'none';
       });
       btnArticoli.innerHTML = expanded
-        ? 'Mostra meno <svg width="16
+        ? 'Mostra meno <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>'
+        : 'Scopri altro <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>';
+      btnArticoli.classList.toggle('expanded', expanded);
+    });
+  </script>
+</body>
+</html>
